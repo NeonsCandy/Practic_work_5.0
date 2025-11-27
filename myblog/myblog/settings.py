@@ -83,6 +83,11 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'twenty@gmail.com'
+EMAIL_HOST_PASSWORD = '11111111'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 AUTH_PASSWORD_VALIDATORS = [
     {
