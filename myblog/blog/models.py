@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
-
+from taggit.managers import TaggableManager
 
 class PublishedManager(models.Manager):
     def get_queryset(self):
@@ -14,6 +14,7 @@ class Post(models.Model):
         DRAFT = 'DF', 'Draft'
         PUBLISHED = 'PB', 'Published'
 
+    tags = TaggableManager()
     title = models.CharField(max_length=250)
     # Змінено: додано unique_for_date для SEO-URL
     slug = models.SlugField(max_length=250, unique_for_date='publish')
